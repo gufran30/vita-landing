@@ -1,16 +1,31 @@
-# React + Vite
+# Vīta — AI-Powered Health & Wellness Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> **Know your body. Own your life.**
 
-Currently, two official plugins are available:
+A premium startup landing page built with React, Tailwind CSS, and Framer Motion — featuring dark/light mode, scroll-triggered animations, a fully animated product dashboard mockup, and a smooth pricing toggle.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+🌐 **Live Site:** [vita-landing-five.vercel.app](https://vita-landing-five.vercel.app)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features
 
-## Expanding the ESLint configuration
+- **Dark / Light Mode** — Seamless toggle with smooth background transition
+- **Custom Animated Cursor** — Spring-physics cursor with hover scale effect
+- **Staggered Hero Animations** — Words animate in with blur and slide on load
+- **Scroll-Triggered Reveals** — Every section animates in as you scroll
+- **Fixed Ambient Orbs** — Breathing gradient orbs fixed to the viewport
+- **Glassmorphism Cards** — Frosted glass effect with backdrop blur
+- **Animated Product Dashboard** — Floating mockup with live bar chart, circular score, and mini stats
+- **Floating Stat Cards** — Four cards drifting around the dashboard at different speeds
+- **Scrolling Ticker Marquee** — Continuous social proof ticker built with requestAnimationFrame
+- **Pricing Toggle** — Monthly / Annual switch with AnimatePresence price transitions
+- **Floating Particles CTA** — Full-screen closing section with ambient particles
+- **Fully Responsive** — Mobile-first layout across all sections
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+
+<p align="center">
+  Designed & built with intention. 🌿
+</p>
