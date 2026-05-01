@@ -6,6 +6,12 @@ A premium startup landing page built with React, Tailwind CSS, and Framer Motion
 
 🌐 **Live Site:** [vita-landing-five.vercel.app](https://vita-landing-five.vercel.app)
 
+
+<figure>
+  <img src="public/hero-ss.png" alt="Hero section of Vita landing page">
+  <figcaption>Hero section of Vita Landing Page.</figcaption>
+</figure>
+
 ---
 
 ## ✨ Features
