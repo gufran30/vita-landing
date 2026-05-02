@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react"
 import { motion } from "motion/react"
 
 
-export default function Hero({ dark }) {
+export default function Hero({ dark, setHovered }) {
 
   const words = ["Know", "your", "body."]
   const words2 = ["Own", "your", "life."]

@@ -55,7 +55,7 @@ const plans = [
   },
 ]
 
-export default function Pricing({ dark }) {
+export default function Pricing({ dark, setHovered }) {
   const [annual, setAnnual] = useState(false)
 
   return (
@@ -327,6 +327,8 @@ export default function Pricing({ dark }) {
             <motion.button
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
+              onMouseEnter={() => setHovered(true)}
+              onMouseLeave={() => setHovered(false)}
               className="w-full py-4 rounded-full text-sm font-bold tracking-wide mt-auto"
               style={{
                 background: plan.popular

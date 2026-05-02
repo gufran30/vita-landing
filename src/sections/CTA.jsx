@@ -14,9 +14,8 @@ const particles = Array.from({ length: 20 }, (_, i) => ({
   size: 2 + Math.random() * 3,
 }))
 
-console.log(particles)
 
-export default function CTA({ dark }) {
+export default function CTA({ dark, setHovered }) {
   return (
     <section
       className="relative z-10 flex flex-col items-center justify-center text-center overflow-hidden"
@@ -150,6 +149,8 @@ export default function CTA({ dark }) {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
             className="relative flex items-center gap-3 rounded-full font-bold tracking-wide"
             style={{
               background: dark ? "#4ade80" : "#16a34a",

@@ -14,12 +14,25 @@ export default function App() {
   const [dark, setDark] = useState(true)
   const [cursor, setCursor] = useState({ x: 0, y: 0 })
   const [hovered, setHovered] = useState(false)
+  const [isPointer, setIsPointer] = useState(false)
+
+  // create a custom cursor that only activates on devices
+  // with a mouse (like desktops) and disables itself on touchscreens
+  useEffect(() => {
+    const check = () => {
+      setIsPointer(window.matchMedia("(pointer: fine)").matches)
+    }
+    check()
+    window.addEventListener("resize", check)
+    return () => window.removeEventListener("resize", check)
+  }, [])
 
   useEffect(() => {
+    if (!isPointer) return
     const move = (e) => setCursor({ x: e.clientX, y: e.clientY })
     window.addEventListener("mousemove", move)
     return () => window.removeEventListener("mousemove", move)
-  }, [])
+  }, [isPointer])
 
   return (
     <div
@@ -35,20 +48,22 @@ export default function App() {
     >
 
       {/* Custom Cursor */}
-      <motion.div
-        animate={{ x: cursor.x - 16, y: cursor.y - 16, scale: hovered ? 2.5 : 1 }}
-        transition={{ type: "spring", stiffness: 300, damping: 28 }}
-        style={{
-          position: "fixed",
-          width: 32,
-          height: 32,
-          borderRadius: "50%",
-          border: `2px solid ${dark ? "#4ade80" : "#16a34a"}`,
-          pointerEvents: "none",
-          zIndex: 9999,
-          mixBlendMode: "difference",
-        }}
-      />
+      {isPointer && (
+        <motion.div
+          animate={{ x: cursor.x - 16, y: cursor.y - 16, scale: hovered ? 2.5 : 1 }}
+          transition={{ type: "spring", stiffness: 300, damping: 28 }}
+          style={{
+            position: "fixed",
+            width: 32,
+            height: 32,
+            borderRadius: "50%",
+            border: `2px solid ${dark ? "#4ade80" : "#16a34a"}`,
+            pointerEvents: "none",
+            zIndex: 9999,
+            mixBlendMode: "difference",
+          }}
+        />
+      )}
 
       <motion.div
         animate={{ scale: [1, 1.15, 1], opacity: [0.5, 0.8, 0.5] }}
@@ -92,8 +107,8 @@ export default function App() {
         <Features dark={dark} />
         <Testimonials dark={dark} />
         <ProductVisual dark={dark} />
-        <Pricing dark={dark} />
-        <CTA dark={dark} />
+        <Pricing dark={dark} setHovered={setHovered} />
+        <CTA dark={dark} setHovered={setHovered} />
         <Footer dark={dark} />
       </div>
 
